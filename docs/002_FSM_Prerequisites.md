@@ -21,6 +21,7 @@
 ### Powers of Alphabet \( \Sigma \)
 
 The powers of an alphabet \( \Sigma \) describe sets of strings of certain lengths:
+
 - **\( \Sigma^0 \)**: Set of all strings of length 0 (only the empty string \( \epsilon \)).
 - **\( \Sigma^1 \)**: Set of all strings of length 1.
 - **\( \Sigma^2 \)**: Set of all strings of length 2.

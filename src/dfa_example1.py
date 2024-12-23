@@ -19,32 +19,51 @@ The DFA for this task has two states:
 
 Example Implementation in Python:
 """
-
+from PIL import Image
+ 
 def dfa_accepts(input_string):
-    # Define the DFA transitions
-    dfa = {
-        'q0': {'0': 'q0', '1': 'q1'},  # From q0, reading '0' stays in q0, '1' goes to q1
-        'q1': {'0': 'q1', '1': 'q1'}   # From q1, reading any character stays in q1
-    }
-    current_state = 'q0'  # Start in the start state q0
+    # Check if the string starts with '0'
+    if input_string[0] != '0':  # If the first character is not '0', reject immediately
+        return False
 
-    # Process each character in the input string
+    # Ensure the string contains only '0' and '1'
     for char in input_string:
-        current_state = dfa[current_state][char]  # Transition to the next state
+        if char not in ['0', '1']:  # If any character is not '0' or '1'
+            return False
 
-    # Determine if the string is accepted
-    # The string is accepted if the machine ends in state q0
-    return current_state == 'q0'
+    # The string is accepted if it starts with '0'
+    return True
+  
 
-# Test cases to demonstrate the DFA's functionality
-test_strings = ['0', '01', '000', '010', '011', '100']
-for string in test_strings:
-    result = "accepts" if dfa_accepts(string) else "rejects"
-    print(f"DFA {result} the string '{string}'")
+# Main loop to continuously ask the user for input until 'done'
+while True:
+    
+    # Ask for user input
+    user_input = input("Enter a string to check (only '0' and '1' are valid characters, type 'done' to exit): ")
 
-"""
-Explanation of Test Cases:
-- '0', '000', and '010' start with '0', so they are accepted.
-- '01' also starts with '0', thus it is accepted even though it has a '1' after the '0'.
-- '011' and '100' do not start with '0', so they are rejected.
-"""
+    # If user wants to exit the loop
+    if user_input.lower() == "done":
+        print("Exiting the program.")
+        break
+
+    # Check if the input is valid
+    if user_input.startswith('0'):
+        result = "accepted"
+    else:
+        result = "rejected"
+
+    # Provide feedback to the user based on their input
+    if dfa_accepts(user_input):
+        print(f"The input '{user_input}' is accepted.")
+    else:
+        print(f"The input '{user_input}' is rejected because it starts with '1'.")
+
+   
+    """
+    Explanation: 
+    Loop Continuation: The program keeps asking the user to enter strings until the word "done" is typed. 
+    This matches your requirement to allow multiple inputs.
+    Custom Message: Based on whether the string starts with '0' or '1', the program gives a detailed response.
+    Exit: When the user types "done", the program exits the loop and terminates.
+    """
+
