@@ -1,3 +1,8 @@
+"""
+    This script will continuously prompt the user to input strings, 
+    process each string through the NFA, and print whether the NFA accepts or rejects the string based on whether it ends with '0'. 
+    The loop terminates when the user enters "done"
+"""
 def nfa_accepts(input_string):
     # Define the NFA transitions
     nfa = {
