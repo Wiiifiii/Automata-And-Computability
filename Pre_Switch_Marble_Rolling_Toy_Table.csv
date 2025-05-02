@@ -1,0 +1,17 @@
+Initial State,Input,Switched State,Path Taken,Final State,Output,Acceptance
+000,A,100,A -> x1 -> D,100,Acceptance,Accept
+000,B,011,B -> x3 -> C,011,Non-acceptance,Reject
+001,A,101,A -> x1 -> D,101,Acceptance,Accept
+001,B,000,B -> x3 -> C,000,Non-acceptance,Reject
+010,A,110,A -> x1 -> D,110,Acceptance,Accept
+010,B,001,B -> x3 -> C,001,Non-acceptance,Reject
+011,A,111,A -> x1 -> D,111,Acceptance,Accept
+011,B,010,B -> x3 -> C,010,Non-acceptance,Reject
+100,A,000,A -> x1 -> C,000,Non-acceptance,Reject
+100,B,111,B -> x3 -> D,111,Acceptance,Accept
+101,A,001,A -> x1 -> C,001,Non-acceptance,Reject
+101,B,110,B -> x3 -> D,110,Acceptance,Accept
+110,A,010,A -> x1 -> C,010,Non-acceptance,Reject
+110,B,101,B -> x3 -> D,101,Acceptance,Accept
+111,A,001,A -> x1 -> D,001,Acceptance,Accept
+111,B,110,B -> x3 -> C,110,Non-acceptance,Reject

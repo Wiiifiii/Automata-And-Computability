@@ -1,0 +1,17 @@
+Lever State (Initial),Input,Next State,Output,Acceptance
+000,A,100,Non-acceptance,Reject
+000,B,011,Non-acceptance,Reject
+001,A,101,Non-acceptance,Reject
+001,B,000,Acceptance,Accept
+010,A,110,Non-acceptance,Reject
+010,B,001,Acceptance,Accept
+011,A,111,Non-acceptance,Reject
+011,B,010,Acceptance,Accept
+100,A,000,Acceptance,Accept
+100,B,111,Non-acceptance,Reject
+101,A,001,Acceptance,Accept
+101,B,110,Non-acceptance,Reject
+110,A,010,Acceptance,Accept
+110,B,101,Acceptance,Accept
+111,A,001,Acceptance,Accept
+111,B,110,Acceptance,Accept
